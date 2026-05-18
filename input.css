@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@theme {
+  --font-family-bellota: "Bellota", system-ui;
+  --font-family-barriecito: "Barriecito", system-ui;
+}
+
+@layer components {
+  .bellota-regular {
+    font-family: var(--font-family-bellota);
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .bellota-bold {
+    font-family: var(--font-family-bellota);
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  .barriecito-regular {
+    font-family: var(--font-family-barriecito);
+    font-weight: 400;
+    font-style: normal;
+  }
+}
