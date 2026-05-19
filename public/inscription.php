@@ -61,7 +61,7 @@
 
 
             <!-- //////////////////MOBILE//////////////////         -->
-            <h2 class="text-xl text-center xl:hidden">Choisi un pseudo pour entrer dans la salle de chat</h2>
+            <h2 class="text-xl text-center px-8 py-4 xl:hidden">Choisi un pseudo pour entrer dans la salle de chat</h2>
             <a href="" class="bg-[#D7D0C8] rounded-full text-[#6B6B6B] 
         text-2xl font-extralight px-6 py-2 bellota-regular xl:hidden">ex : Sophie42...</a>
             <a href="" class="bg-[#1D3354] rounded-full text-white 
