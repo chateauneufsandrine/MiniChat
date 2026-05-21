@@ -1,3 +1,14 @@
+<?php
+
+require_once "../utils/db_connexion.php";
+
+// on commence par préparer la requète grace à prepare()(requête avec variable)
+$request =  $db->query('SELECT * FROM chatters');
+// on récupère la réponse à la requète grâce à fetchAll(), 
+$chatters = $request->fetchAll(PDO::FETCH_ASSOC);
+// var_dump($chatters);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -52,17 +63,15 @@
                 <div class="flex flex-col py-4 text-center px-8 gap-8 justify-end">
                     <h2 class="text-center text-3xl">Ton pseudo</h2>
 
-                    <form action="../process/exercice2.php" method="POST" class="bg-[#D7D0C8] 
- rounded-full text-[#6B6B6B] text-2xl font-extralight px-6 py-2 bellota-regular flex flex-col ">
+                    <form action="../process/ajout-pseudo.php" method="POST" class="bg-[#D7D0C8] 
+ rounded-2xl text-[#6B6B6B] text-2xl font-extralight px-6 py-2 bellota-regular flex flex-col ">
 
                         <label for="pseudo">Entre ton pseudo</label>
                         <input type="text" id="pseudo" name="pseudo">
+   <button type="submit" class="bg-[#1D3354] rounded-full text-white 
+        text-2xl font-extralight px-6 py-2 bellota-regular hover:bg-[#E2294F] transition">Validez</button>
 
                     </form>
-
-                    <button type="submit" class="bg-[#1D3354] rounded-full text-white 
-        text-2xl font-extralight px-6 py-2 bellota-regular">Validez</button>
-
 
                     <a href="chat.php" class="bg-[#467599] rounded-full text-white 
         text-2xl font-extralight px-6 py-2 bellota-regular">Entrez dans le chat</a>
@@ -87,22 +96,23 @@
 
     <footer class="bg-[#467599] h-40 flex flex-row items-center justify-center xl:hidden"></footer>
 
-    <footer class="hidden xl:flex bg-[#6F5060] h-40 flex-row items-center justify-baseline gap-8 py-8 px-8">
+    <footer class="flex bg-[#6F5060] h-40 flex-row items-center justify-baseline gap-8 py-8 px-8">
         <h3 class="barriecito-regular text-4xl">Participants</h3>
 
-        <div class="flex flex-col items-center bellota-regular gap-2"><img src="../images/message-Ayumu.png" alt="" class="w-24">
-            <p>Ayumu</p>
-        </div>
+        <?php foreach ($chatters as $chatter): ?>
 
-        <div class="flex flex-col items-center bellota-regular gap-2"><img src="../images/message-Blur.png" alt="" class="w-24">
+            <div class="flex flex-col items-center bellota-regular gap-2"><img src="../images/message-Ayumu.png" alt="" class="w-24">
+                <p><?= $chatter['pseudo'] ?></p>
+            </div>
+        <?php endforeach; ?>
+
+        <!-- <div class="flex flex-col items-center bellota-regular gap-2"><img src="../images/message-Blur.png" alt="" class="w-24">
             <p>Blur</p>
         </div>
 
         <div class="flex flex-col items-center bellota-regular gap-2"><img src="../images/Chatter4.png" alt="" class="w-24">
             <p>PandaCraft</p>
-        </div>
-
-
+        </div> -->
 
     </footer>
 

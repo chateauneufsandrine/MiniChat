@@ -9,7 +9,7 @@
      </div>
 
      <a href="inscription.php" class="hidden bg-[#1D3354] rounded-full
-          text-white text-3xl font-extralight px-6 py-2 xl:flex xl:items-center ">
+          text-white text-3xl font-extralight px-6 py-2 xl:flex xl:items-center hover:bg-[#E2294F] transition">
          S'inscrire
      </a>
  </header>

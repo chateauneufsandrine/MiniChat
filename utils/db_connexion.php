@@ -12,7 +12,7 @@
         // le dsn (data source name), qui va correspondre à la base de donnée que l'on utilise, ici mysql
         // suivi de l'hote après host=, ici localhost
         // suivi du nom de la base de donnée après "dbname="
-        $dsn = 'mysql:host=localhost;dbname=hospitale2n';
+        $dsn = 'mysql:host=localhost;dbname=mini_chat';
 
 
         // le nom d'utilisateur, utilisé dans la base de donnée, oar défaut sur wampserver c'est 'root'
